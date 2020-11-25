@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .scrollmenu {
+            display: block;
+            overflow-y: auto;
+            height:auto;
+            white-space: pre-wrap;
+            }
+    </style>
+    </head>
+
+<body>
+    {% extends 'base.html' %}
+    {% block content %}   
+    <div style="text-align: center;" >
+        <h1>Welcome !!! </h1>
+        <p style="font-size: 20px; color:black;">Please find below the information about your mobile application.</p>
+    </div>      
+    <div class="scrollmenu">  
+        <div style="font-size: 20px; color:blue;"><u>App Name:</u></div><dd><b>{{app_name}}</b></dd>
+        <div style="font-size: 20px; color:blue;"><u>App Version:</u></div><dd><b>{{app_v}}</b></dd>
+        <div style="font-size: 20px; color:blue;"><u>No. of Downloads:</u></div><dd><b>{{app_d}}</b></dd>
+        <div style="font-size: 20px; color:blue;"><u>Release Date:</u></div><dd><b>{{r_date}}</b></dd>
+        <div style="font-size: 20px; color:blue;"><u>Description:</u></div><dd><b>{{description}}</b></dd>
+    </div>
+    {% endblock %}
+
+</body>
+</html>

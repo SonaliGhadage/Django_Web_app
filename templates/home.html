@@ -1,0 +1,32 @@
+
+<!-- Jinja technique to import the properies of base.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--To make use of a static files in the website-->
+{% load static %}
+
+<h2>Glad to see you here !!! </h2>
+<p style="font-size: 20px; color:blue;"><u>About this site:</u></p><p style="font-size: 20px; color:black;">This site will help you to extract basic information about Android application available on the Aptoide mobile application marketplace (https://en.aptoide.com/) in one click.</p>
+<center>
+    <img src="{% static 'images/Android-Apps.jpg' %}" alt="" style="width:400px;height:200px;">
+
+    <form action="scrape" method="post" padding_bottom=80>
+        {% csrf_token %}
+
+        <h3> Please Enter Your Android Application Link : </h3> 
+        <input type="url" name="url" onfocus="this.value=''"><br><br>
+
+        <input type="submit">
+    </form>
+
+    <div>
+        {% for msg in messages %}
+        <h3 style="color:red;">{{msg}}</h3>
+        {% endfor %}
+    </div>
+</center>
+
+
+{% endblock %}
